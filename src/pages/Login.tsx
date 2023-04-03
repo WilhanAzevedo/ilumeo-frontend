@@ -1,5 +1,8 @@
 import { createStyles, rem, Button, TextInput } from '@mantine/core';
 import './Login.css'
+import axios from 'axios';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
     root: {
@@ -35,11 +38,38 @@ const useStyles = createStyles((theme) => ({
 export function Login() {
     const { classes } = useStyles();
 
+    const [code, setCode] = useState(0);
+
+    const handleCode = (e: any) => {
+        setCode(e.target.value);
+    }
+
+    const navigate = useNavigate();
+
+    const baseUrl = import.meta.env.VITE_URL_BACKEND;
+
+    const handleSubmit = (e: any) => {
+
+        e.preventDefault();
+        axios.post(`${baseUrl}/users/login`, { code })
+            .then(response => {
+                console.log(response.data);
+                navigate('/home');
+
+
+            }).catch(error => {
+                console.log(error);
+                navigate('/home');
+            });
+    }
+
+
+
     return (
-        <div className="conatiner-login">
+        <div className="container-login">
             <span className="title-login">Ponto <b>Ilumeo</b></span>
-            <TextInput label="Código do Usuário" placeholder="4SXXFMf" classNames={classes} />
-            <Button color="blue" className="my-button" variant="filled" size="lg" fullWidth> Continuar </Button>
+            <TextInput label="Código do Usuário" placeholder="4SXXFMf" classNames={classes} onChange={handleCode} />
+            <Button color="blue" className="my-button" variant="filled" size="lg" fullWidth onClick={handleSubmit}>Entrar</Button>
         </div>
     );
 }
