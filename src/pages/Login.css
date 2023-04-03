@@ -1,0 +1,25 @@
+#root {
+    margin: 0 auto;
+}
+
+.title-login {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21.5172px;
+    line-height: 26px;
+    text-align: center;
+    color: #CFCFCF;
+}
+
+.my-button {
+    background: linear-gradient(124.18deg, #FE8A00 22.06%, #FE8A00 81.62%);
+    border-radius: 4px;
+    margin-top: 24px;
+}
+
+.my-button:hover {
+    background: linear-gradient(124.18deg, #fe8c00d2 22.06%, #fe8c00d2 81.62%);
+    border-radius: 4px;
+    margin-top: 24px;
+    border-color: #FE8A00;
+}
