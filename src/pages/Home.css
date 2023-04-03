@@ -19,5 +19,11 @@
 .container-home {
     width: 370px;
     display: flex;
+
+}
+
+.container-home-top {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
 }
