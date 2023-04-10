@@ -71,7 +71,10 @@ export function Home() {
                     let horas = hours.toFixed(2);
                     let h = horas.split('.')[0];
                     let m = horas.split('.')[1];
-                    let s = segundos.toFixed(0);
+                    if(parseInt(m) >= 60){
+                        h = (parseInt(h) + 1).toString();
+                        m = (parseInt(m) - 60).toString();
+                    }
                     horas = `${h}h ${m}m`;
                     setHoras(horas);
                     setTitle('Hora de saída');
@@ -82,7 +85,7 @@ export function Home() {
                 let ent = new Date(element.entry);
                 let exit = new Date(element.exit);
                 let diff = exit.getTime() - ent.getTime();
-                let hours = diff / 1000 / 60 / 60;
+                let hours = diff / 1000 / 60 / 60 ;
 
                 points.push({ date: `${ent.getDate()}/${ent.getMonth()}/${ent.getFullYear()}`, hours: hours.toFixed(2) });
 
@@ -116,7 +119,12 @@ export function Home() {
             let year = date[2].substring(2, 4);
             point.date = `${day}/${month}/${year}`;
             let hours = point.hours.split('.')[0];
-            let minutes = point.hours.split('.')[1];
+            let minutes = parseInt(point.hours.split('.')[1])
+            if(minutes >= 60){
+                hours = (parseInt(hours) + 1).toString();
+                minutes = (minutes - 60)
+                minutes.toString();
+            }
             return { date: point.date, hours: `${hours}h ${minutes}m` };
         })
 
