@@ -17,6 +17,11 @@ export function Login() {
 
     const navigate = useNavigate();
 
+    if(localStorage.getItem('usuario')){
+        navigate('/home');
+    }
+
+
     const baseUrl = import.meta.env.VITE_URL_BACKEND;
 
     const handleSubmit = (e: any) => {
