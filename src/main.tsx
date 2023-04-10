@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import { Home } from "./pages/Home";
+import { Demo } from "./pages/Notification";
+
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/demo",
+    element: <Demo />,
   }
 ]);
 

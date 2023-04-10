@@ -8,6 +8,7 @@
 }
 
 .subtitle {
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 11.6px;
@@ -16,9 +17,28 @@
     color: #F5F5F5;
 }
 
-.container-home {
-    width: 370px;
+.sub {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: rgba(207, 207, 207, 0.69);
+    text-align: end;
+}
+
+.usuario {
     display: flex;
+    flex-direction: column;
+}
+
+.container-home {
+    padding: 10px;
+    width: 100vw;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -26,4 +46,82 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.my-button-home {
+    width: 100%;
+    background: linear-gradient(124.18deg, #FE8A00 22.06%, #FE8A00 81.62%);
+    border-radius: 4px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #1E2733;
+
+}
+
+.my-button-home:hover {
+    background: linear-gradient(124.18deg, #fe8c00d2 22.06%, #fe8c00d2 81.62%);
+    border-radius: 4px;
+    border-color: #FE8A00;
+}
+
+.container-home-horas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 19px;
+    margin-top: 10px;
+}
+
+.horas {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23.2px;
+    line-height: 28px;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.sub-horas {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 11.6px;
+    line-height: 14px;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.label-anteriores {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #F5F5F5;
+    margin-top: 19px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.card {
+    width: 100%;
+    background: rgba(217, 217, 217, 0.05);
+    border-radius: 4px;
+    padding: 13px;
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-points{
+    max-height: 400px;
+    overflow: auto;
 }
